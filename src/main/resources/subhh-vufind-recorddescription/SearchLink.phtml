@@ -1,0 +1,6 @@
+<?php $query = http_build_query(['lookfor' => $value->getSearchTerm(), 'type' => $value->getSearchType()]); ?>
+<?php $href = $this->url('search-results') . '?' . $query; ?>
+<?php $prefix = $value->getPrefix(); ?>
+<?php $suffix = $value->getSuffix(); ?>
+<?php $main = $value->isTranslatable() ? $this->translate([$value->getTextDomain(), $value->getValue()]) : $value->getValue(); ?>
+<?= $this->escapeHtml($prefix) ?><a href="<?= $this->escapeHtmlAttr($href) ?>"><?= $this->escapeHtml($main) ?></a><?= $this->escapeHtml($suffix) ?>

@@ -1,0 +1,4 @@
+<?php $prefix = $value->getPrefix(); ?>
+<?php $suffix = $value->getSuffix(); ?>
+<?php $main = $value->isTranslatable() ? $this->translate([$value->getTextDomain(), $value->getValue()]) : $value->getValue(); ?>
+<?= $this->escapeHtml($prefix) ?><?= $this->escapeHtml($main) ?><?= $this->escapeHtml($suffix) ?>

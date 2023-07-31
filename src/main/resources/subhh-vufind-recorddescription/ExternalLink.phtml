@@ -1,0 +1,9 @@
+<?= $this->escapeHtml($value->getPrefix()); ?>
+<a href="<?= $this->escapeHtmlAttr($value->getLinkTarget()) ?>">
+    <?php if ($value->isTranslatable()): ?>
+    <?= $this->transEsc($value->getLinkLabel()); ?>
+    <?php else: ?>
+    <?= $this->escapeHtml($value->getLinkLabel()); ?>
+    <?php endif ?>
+</a>
+<?= $this->escapeHtml($value->getSuffix()); ?>

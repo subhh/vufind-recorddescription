@@ -1,0 +1,5 @@
+<?php if ($value->isTranslatable()): ?>
+<?= $this->transEsc($value->getValue()); ?>
+<?php else: ?>
+<?= $this->escapeHtml($value->getValue()); ?>
+<?php endif ?>

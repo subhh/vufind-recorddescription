@@ -1,0 +1,11 @@
+<?php
+
+$separator = $this->escapeHtml($sequence->getSeparator());
+
+$values = array();
+foreach ($sequence->getIterator() as $value) {
+    $values[] = $this->recordDescription()->renderDisplayValue($value);
+}
+
+?>
+<?= implode($separator, $values) ?>
