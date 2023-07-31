@@ -29,6 +29,6 @@ final class ResourceLocator
 {
     public static function getResourceDirectory () : string
     {
-        return __DIR__ . '/../../resources/subhh-vufind-recorddescription';
+        return __DIR__ . '/../resources/subhh-vufind-recorddescription';
     }
 }
