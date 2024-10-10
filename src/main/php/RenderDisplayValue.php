@@ -25,21 +25,11 @@ declare(strict_types=1);
 
 namespace SUBHH\VuFind\RecordDescription;
 
-use VuFind\RecordDriver\SolrMarc;
-
 use Laminas\View\Helper\AbstractHelper;
 
-final class ViewHelper extends AbstractHelper
+final class RenderDisplayValue extends AbstractHelper
 {
-    /** @var DescriptionProviderInterface */
-    private $provider;
-
-    public function __construct (DescriptionProviderInterface $provider)
-    {
-        $this->provider = $provider;
-    }
-
-    public function renderDisplayValue (DisplayValueInterface $value) : ?string
+    public function __invoke (DisplayValueInterface $value) : ?string
     {
         $view = $this->getView();
         if ($view) {
@@ -57,16 +47,5 @@ final class ViewHelper extends AbstractHelper
             }
         }
         return null;
-    }
-
-    /** @return array<string, DisplayValueInterface[]> */
-    public function getDescription (SolrMarc $record) : array
-    {
-        return $this->provider->createDescription($record);
-    }
-
-    public function __invoke () : self
-    {
-        return $this;
     }
 }
